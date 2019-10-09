@@ -13,13 +13,19 @@
     include_once "StudentsManager.php";
     $id = $_GET['id'];
     $listStudent = $manager->readFileJsonToArray();
-        $name = $listStudent[$id]["name"];
-        $address = $listStudent[$id]["address"];
-        $phone = $listStudent[$id]["phone"];
-        $class = $listStudent[$id]["class"];
+    $name = $listStudent[$id]["name"];
+    $address = $listStudent[$id]["address"];
+    $phone = $listStudent[$id]["phone"];
+    $class = $listStudent[$id]["class"];
     ?>
     <center>
         <table>
+            <tr style="display:none">
+                <td>Id:</td>
+                <td>
+                    <input type="text" name="id" value="<?php echo $id ?>" readonly="readonly">
+                </td>
+            </tr>
             <tr>
                 <td>Name:</td>
                 <td><input type="text" placeholder="Input Name" name="name" value="<?php echo $name ?>"></td>
